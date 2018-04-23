@@ -1,2 +1,2 @@
-# ICT221_Gargen_Planner
-ICT221 project from week5 ~ 8 by Kim,Donghyun
+# ict221_garden_planner
+Initial code for ICT221 Garden Planner
