@@ -153,7 +153,7 @@ public class GardenPlanner {
             if (line.startsWith("#") || line.length() == 0) {
                 // we skip comment lines and empty lines.
             }
-            else if (words.length == 5 && words[0].toLowerCase().equals("circle")) {
+            else if (words.length == 4 && words[0].toLowerCase().equals("circle")) {
                 Circle cir = new Circle();
                 cir.setLeft(Double.parseDouble(words[1]));
                 cir.setTop(Double.parseDouble(words[2]));

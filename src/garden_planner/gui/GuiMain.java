@@ -5,10 +5,12 @@ import garden_planner.model.GardenPlanner;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+//import javax.swing.plaf.synth.ImagePainter;
 
 
 public class GuiMain extends Application {
@@ -18,6 +20,7 @@ public class GuiMain extends Application {
     private javafx.scene.shape.Rectangle rect;
     private javafx.scene.shape.Rectangle selectedRect;
     private TextField widthField;
+    private BorderPane root;
 
     public  GuiMain() {
         planner.createBasicDesign();
@@ -26,6 +29,7 @@ public class GuiMain extends Application {
     public void start(Stage primaryStage) throws Exception{
         // Parent root = FXMLLoader.load(getClass().getResource("garden_gui.fxml"));
         Pane pane = new Pane();
+//        pane = (Pane) root.getCenter();
         pane.setStyle("-fx-background-color: #007700;");
 
 
@@ -45,8 +49,10 @@ public class GuiMain extends Application {
         for (GardenBed r : planner.getBeds()) {
             cir = new Circle();
             cir.setRadius(r.getHeight()* scale);
+            cir.setHeight(r.getHeight() * scale);
+            cir.setWidth(r.getWidth() * scale);
 
-            System.out.println("Hello World");
+
 
 
         }
@@ -75,7 +81,7 @@ public class GuiMain extends Application {
 
         widthField.setOnAction(ev -> { rect.setWidth(Double.parseDouble(widthField.getText()));} );
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Garden Planner");
         primaryStage.setScene(new Scene(pane, 800, 600));
         primaryStage.show();
 
