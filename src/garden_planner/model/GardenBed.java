@@ -37,4 +37,12 @@ public abstract class GardenBed {
     public abstract double getArea();
 
     public abstract double getPerimeter();
+
+    public abstract void setRadius();
+
+    public abstract void setCenterX();
+
+    public abstract void setCenterY();
+
+
 }

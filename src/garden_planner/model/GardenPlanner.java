@@ -155,8 +155,8 @@ public class GardenPlanner {
             }
             else if (words.length == 4 && words[0].toLowerCase().equals("circle")) {
                 Circle cir = new Circle();
-                cir.setLeft(Double.parseDouble(words[1]));
-                cir.setTop(Double.parseDouble(words[2]));
+                cir.setCenterY(Double.parseDouble(words[1]));
+                cir.setCenterX(Double.parseDouble(words[2]));
                 cir.setRadius(Double.parseDouble(words[3]));
                 getBeds().add(cir);
             }

@@ -16,7 +16,8 @@ import javafx.stage.Stage;
 public class GuiMain extends Application {
     private GardenPlanner planner = new GardenPlanner();
     private int scale = 100;
-    private Circle cir;
+    private javafx.scene.shape.Circle cir;
+    private javafx.scene.shape.Circle selectedRect_cir;
     private javafx.scene.shape.Rectangle rect;
     private javafx.scene.shape.Rectangle selectedRect;
     private TextField widthField;
@@ -47,31 +48,32 @@ public class GuiMain extends Application {
             });
 
         for (GardenBed r : planner.getBeds()) {
-            cir = new Circle();
-            cir.setRadius(r.getHeight()* scale);
-            cir.setHeight(r.getHeight() * scale);
-            cir.setWidth(r.getWidth() * scale);
-
-
-
-
+            if (r instanceof garden_planner.model.Circle) {
+                cir = new javafx.scene.shape.Circle();
+                cir.setRadius(50.0f);
+                cir.setCenterX(100.0f);
+                cir.setCenterY(150.0f);
+                pane.getChildren().add(cir);
+            }
         }
     /**
      * Solution to show all Garden Beds
      */
         for (GardenBed r : planner.getBeds()) {
-            rect = new Rectangle();
-            rect.setHeight(r.getHeight() * scale);
-            rect.setWidth(r.getWidth() * scale);
-            rect.setX(r.getLeft() * scale);
-            rect.setY(r.getTop() * scale);
-            rect.setOnMouseDragged(ev -> {
-                rect.setX(ev.getX() );
-                rect.setY(ev.getY() );
+            if (r instanceof garden_planner.model.Rectangle) {
+                rect = new Rectangle();
+                rect.setHeight(r.getHeight() * scale);
+                rect.setWidth(r.getWidth() * scale);
+                rect.setX(r.getLeft() * scale);
+                rect.setY(r.getTop() * scale);
+                rect.setOnMouseDragged(ev -> {
+                    rect.setX(ev.getX());
+                    rect.setY(ev.getY());
 
 
-            });
-            pane.getChildren().add(rect);
+                });
+                pane.getChildren().add(rect);
+            }
         }
         widthField  = new TextField("???");
         double width = planner.getBeds().get(0).getWidth();
