@@ -20,4 +20,9 @@ public class Controller {
     private javafx.scene.shape.Rectangle selectedRect;
     private TextField widthField;
     private BorderPane root;
+
+
+
+
 }
+

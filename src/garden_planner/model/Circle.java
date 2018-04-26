@@ -1,11 +1,7 @@
 package garden_planner.model;
 
 public class Circle extends GardenBed {
-    private double width = 1.0;
-    private double height = 1.0;
     private  double radius = 3.14;
-    private double CenterX = 1.0;
-    private double CenterY = 1.0;
 
     public Circle() {
 
@@ -13,62 +9,35 @@ public class Circle extends GardenBed {
 
     @Override
     public double getWidth() {
-        return width;
+        return 2 * radius;
     }
 
     @Override
     public double getHeight() {
-        return height;
+        return 2* radius;
     }
 
     @Override
     public double getArea() {
-        return width * height;
+        return (radius * radius) * Math.PI;
     }
 
     @Override
     public double getPerimeter() {
-        return 2 / (width + height);
+        return 2 / (radius);
     }
 
-    @Override
-    public void setRadius() {
 
+    public void setRadius(double r) {
+        radius = r;
     }
 
-    @Override
-    public void setCenterX() {
-
-    }
-
-    @Override
-    public void setCenterY() {
-
-    }
 
     @Override
     public String toString() {
-        return String.format("Circle %.2f %.2f %.2f %.2f", left, top, width, height);
+        return String.format("Circle %.2f %.2f %.2f %.2f", left, top, radius, radius);
     }
 
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-    public void setCenterX(double centerX) {
-        this.CenterX = centerX;
-    }
-    public void setCenterY(double centerY) {
-        this.CenterY = centerY;
-    }
 
 
 }

@@ -52,26 +52,32 @@ public class GardenPlanner {
         Rectangle r1 = new Rectangle();
         Rectangle r2 = new Rectangle();
         Rectangle r3 = new Rectangle();
+        Circle c1 = new Circle();
 
         r1.setWidth(1.0);
         r2.setWidth(2.0);
         r3.setWidth(1.0);
+        c1.setRadius(15.0);
 
         r1.setHeight(2.0);
         r2.setHeight(2.0);
         r3.setHeight(2.0);
 
+
         r1.setLeft(1.0);
         r2.setLeft(3.0);
         r3.setLeft(6.0);
+        c1.setLeft(7.0);
 
         r1.setTop(1.0);
         r2.setTop(1.0);
         r3.setTop(1.0);
-
+        c1.setTop(8.0)
+        ;
         beds.add(r1);
         beds.add(r2);
         beds.add(r3);
+        beds.add(c1);
     }
 
     /**
@@ -155,8 +161,8 @@ public class GardenPlanner {
             }
             else if (words.length == 4 && words[0].toLowerCase().equals("circle")) {
                 Circle cir = new Circle();
-                cir.setCenterY(Double.parseDouble(words[1]));
-                cir.setCenterX(Double.parseDouble(words[2]));
+                cir.setLeft(Double.parseDouble(words[1]));
+                cir.setTop(Double.parseDouble(words[2]));
                 cir.setRadius(Double.parseDouble(words[3]));
                 getBeds().add(cir);
             }

@@ -62,21 +62,6 @@ public class Rectangle extends GardenBed {
     }
 
     @Override
-    public void setRadius() {
-
-    }
-
-    @Override
-    public void setCenterX() {
-
-    }
-
-    @Override
-    public void setCenterY() {
-
-    }
-
-    @Override
     public String toString() {
         return String.format("Rectangle %.2f %.2f %.2f %.2f", left, top, width, height);
     }
