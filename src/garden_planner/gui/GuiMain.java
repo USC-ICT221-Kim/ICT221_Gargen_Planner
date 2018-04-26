@@ -1,4 +1,5 @@
 package garden_planner.gui;
+import garden_planner.model.Circle;
 import garden_planner.model.GardenBed;
 import garden_planner.model.GardenPlanner;
 import javafx.application.Application;
@@ -6,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -30,6 +32,7 @@ public class GuiMain extends Application {
         Pane pane = new Pane();
         root = new BorderPane();
         root.setCenter(pane);
+
 //        pane = (Pane) root.getCenter();
         pane.setStyle("-fx-background-color: #007700;");
 
@@ -43,11 +46,21 @@ public class GuiMain extends Application {
         double width = planner.getBeds().get(0).getWidth();
         String str = Double.toString(width);
         widthField.setText(str);
-        pane.getChildren().add(widthField);
-
+        System.out.println("Message" + str);
         widthField.setOnAction(ev -> {
             rect.setWidth(Double.parseDouble(widthField.getText()));
+            updateGUI();
         });
+
+
+
+        VBox vb = new VBox();
+        root.setLeft(vb);
+        vb.getChildren().add(widthField);
+        vb.getChildren().add(new Rectangle());
+        updateGUI();
+        //       pane.getChildren().add(widthField);
+
 
         primaryStage.setTitle("Garden Planner");
         primaryStage.setScene(new Scene(root, 800, 600));

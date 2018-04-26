@@ -13,16 +13,6 @@ import javafx.stage.Stage;
 
 
 public class Controller {
-    private GardenPlanner planner = new GardenPlanner();
-    private int scale = 100;
-    private Circle cir;
-    private javafx.scene.shape.Rectangle rect;
-    private javafx.scene.shape.Rectangle selectedRect;
-    private TextField widthField;
-    private BorderPane root;
-
-
-
 
 }
 
