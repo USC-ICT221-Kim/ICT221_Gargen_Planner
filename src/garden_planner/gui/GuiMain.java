@@ -57,8 +57,8 @@ public class GuiMain extends Application {
         VBox vb = new VBox();
         root.setLeft(vb);
         vb.getChildren().add(widthField);
-        vb.getChildren().add(new Rectangle());
-        updateGUI();
+//        planner.getBeds().add(new garden_planner.model.Rectangle());
+
         //       pane.getChildren().add(widthField);
 
 
