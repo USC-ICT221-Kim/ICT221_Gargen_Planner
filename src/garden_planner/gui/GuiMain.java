@@ -50,7 +50,9 @@ public class GuiMain extends Application {
 
 
 
-
+/**
+ * Creates TextField Area
+ */
         widthField = new TextField("???");
         double width = planner.getBeds().get(0).getWidth();
         String str = Double.toString(width);
@@ -68,9 +70,11 @@ public class GuiMain extends Application {
 
 
 
-        
-        
 
+
+/**
+ *create VBox of the garden
+ */
 
         VBox vb = new VBox();
         root.setLeft(vb);
@@ -86,7 +90,9 @@ public class GuiMain extends Application {
         primaryStage.show();
         updateGUI();
     }
-
+    /**
+     * Loop for the Circle and used SetOnMouse function
+     */
     public void updateGUI() {
         Pane pane = (Pane) root.getCenter();
         pane.getChildren().clear();
@@ -108,7 +114,7 @@ public class GuiMain extends Application {
                 pane.getChildren().add(cir);
             }
             /**
-             * Solution to show all Garden Beds
+             * Loop of the Rectangle with Mouse dragged method
              */
             if (r instanceof garden_planner.model.Rectangle) {
                 rect = new Rectangle();

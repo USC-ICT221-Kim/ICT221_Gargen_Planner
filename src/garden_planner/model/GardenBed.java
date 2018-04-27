@@ -1,5 +1,8 @@
 package garden_planner.model;
-
+/**
+ * Class that defines back and front end rectangle and circle
+ * Super of class of Circle and Rectangle
+ */
 public abstract class GardenBed {
     protected double left = 0.0;
     protected double top = 0.0;

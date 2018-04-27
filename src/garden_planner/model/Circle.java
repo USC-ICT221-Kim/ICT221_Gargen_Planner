@@ -1,5 +1,7 @@
 package garden_planner.model;
-
+/**
+ * Subclass of GardenBed and Overrid some functions
+ */
 public class Circle extends GardenBed {
     private  double radius = 3.14;
 

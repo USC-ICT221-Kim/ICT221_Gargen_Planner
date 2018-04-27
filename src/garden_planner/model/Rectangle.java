@@ -1,9 +1,7 @@
 package garden_planner.model;
 
 /**
- * Represents a rectangular shape garden.
- *
- * @author Mark Utting
+ * Subclass of GardenBed and override method for creating Rectangle
  */
 public class Rectangle extends GardenBed {
     private double width = 1.0;

@@ -1,5 +1,7 @@
 package garden_planner.model;
-
+/**
+ * Rectangle Class
+ */
 import static org.junit.jupiter.api.Assertions.*;
 
 class RectangleTest {
