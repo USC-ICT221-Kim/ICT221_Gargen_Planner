@@ -5,11 +5,15 @@ import garden_planner.model.GardenPlanner;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 
 
 public class GuiMain extends Application {
@@ -41,6 +45,7 @@ public class GuiMain extends Application {
 //            updateGUI();
 //        });
 
+        
 
         widthField = new TextField("???");
         double width = planner.getBeds().get(0).getWidth();
@@ -54,12 +59,22 @@ public class GuiMain extends Application {
 
 
 
+
+
+
+
+
+        
+        
+
+
         VBox vb = new VBox();
         root.setLeft(vb);
         vb.getChildren().add(widthField);
-//        planner.getBeds().add(new garden_planner.model.Rectangle());
+        planner.getBeds().add(new garden_planner.model.Rectangle());
 
         //       pane.getChildren().add(widthField);
+
 
 
         primaryStage.setTitle("Garden Planner");
