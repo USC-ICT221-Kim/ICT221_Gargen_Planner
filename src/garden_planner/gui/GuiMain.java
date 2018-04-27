@@ -37,15 +37,19 @@ public class GuiMain extends Application {
         root = new BorderPane();
         root.setCenter(pane);
 
+
 //        pane = (Pane) root.getCenter();
         pane.setStyle("-fx-background-color: #007700;");
 
-
+//          pane.setStyle("-fx-background-image: url(\"background.jpg\");");
 //        pane.setOnMouseReleased(ev -> {
 //            updateGUI();
 //        });
 
-        
+
+
+
+
 
         widthField = new TextField("???");
         double width = planner.getBeds().get(0).getWidth();
